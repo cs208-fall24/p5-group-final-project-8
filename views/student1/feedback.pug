@@ -1,0 +1,23 @@
+doctype html
+link(rel='stylesheet' href='css/student1.css')
+
+head
+    title todo - student1
+body 
+    h1 Will White
+    h2 Department of Europa's Studies Feedback Form
+    section 
+        h4 Add Feedback here 
+            form(action = '/addComment', method = "POST")
+                label.addText(for='comment') Comment:  
+                input.addBox(type = 'text' name = 'comment')
+                input.addButton(type = 'submit' value = 'Add')
+        ul
+        - for (let comment of comments)
+            li= comment.comment + " - " + comment.date + " min(s) ago"
+            form(action="/deleteComment", method="POST")
+                input(type="hidden", name="id" value=comment.id)
+                input.deleteButton(type="submit", value="Delete")
+    section 
+        a(href='/student1') Back to Department of Europa's Studies
+        

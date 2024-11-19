@@ -13,4 +13,5 @@ TODO
 
 ## Sources used
 
-TODO
+Datetime:
+(https://learnsql.com/cookbook/how-to-calculate-the-difference-between-two-timestamps-in-sqlite/)
