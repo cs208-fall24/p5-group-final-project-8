@@ -29,6 +29,10 @@ app.get('/student1', function (req, res) {
       console.log(err)
       return res.status(500).send('Error has occurred')
     }
+    for (let i = row.length - 1; i > 0; i--) {
+      const randomInt = Math.floor(Math.random() * (i + 1));
+      [row[i], row[randomInt]] = [row[randomInt], row[i]]
+    }
     const comments = row
     res.render('student1', { comments })
   })
