@@ -1,3 +1,46 @@
 body{
-    background-color: hotpink;
+    background-color: darkblue;
+    color: rgb(156, 151, 151);
+}
+
+h2.mainTitle{
+    text-align: center;
+    border-bottom: 4px solid rgb(3, 103, 165);
+}
+
+p.location{
+    border-bottom: 4px solid rgb(3, 103, 165);
+}
+
+h2.sub{
+    font-style: italic;
+}
+
+h3.sub{
+    border-top: 4px dashed rgb(3, 103, 165);
+}
+
+section.bottomSec{
+    border-bottom: 4px solid rgb(3, 103, 165);
+}
+
+li.one{
+    background-color: lightseagreen;
+    color: black;
+}
+
+li.two{
+    background-color: lightskyblue;
+    color: black;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+    padding: 10px;
+    display: inline-block;
+    width: 220px;
+    height: 155px;
 }
