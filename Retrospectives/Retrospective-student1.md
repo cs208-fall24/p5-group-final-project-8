@@ -15,3 +15,6 @@ TODO
 
 Datetime:
 (https://learnsql.com/cookbook/how-to-calculate-the-difference-between-two-timestamps-in-sqlite/)
+
+UPDATE:
+https://www.sqlitetutorial.net/sqlite-update/

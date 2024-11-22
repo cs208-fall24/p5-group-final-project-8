@@ -23,13 +23,20 @@ app.get('/', function (req, res) {
 })
 
 app.get('/student1', function (req, res) {
-  console.log('GET called')
-  res.render('student1')
+  console.log('GET called for /student1')
+  db.all('SELECT id, comment, date, (ROUND(((JULIANDAY("now") - JULIANDAY(date)) * 86400) / 60)) + 1 AS date FROM feedback', function (err, row) {
+    if (err) {
+      console.log(err)
+      return res.status(500).send('Error has occurred')
+    }
+    const comments = row
+    res.render('student1', { comments })
+  })
 })
 
 app.get('/student1/feedback', function (req, res) {
-  console.log('GET called')
-  db.all('SELECT id, comment, date, ROUND(((JULIANDAY("now") - JULIANDAY(date)) * 86400) / 60) AS date FROM feedback', function (err, row) {
+  console.log('GET called for /student1/feedback')
+  db.all('SELECT id, comment, date, (ROUND(((JULIANDAY("now") - JULIANDAY(date)) * 86400) / 60)) + 1 AS date FROM feedback', function (err, row) {
     if (err) {
       console.log(err)
       return res.status(500).send('Error has occurred')
@@ -49,6 +56,19 @@ app.post('/addComment', function (req, res) {
     res.redirect('/student1/feedback')
   })
   console.log('Comment added')
+})
+
+app.post('/editComment', function (req, res) {
+  const comment = req.body.edit
+  const id = req.body.id
+  db.run('UPDATE feedback SET comment = ? WHERE id = ?', [comment, id], (err) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).send('Error has occurred')
+    }
+    res.redirect('/student1/feedback')
+  })
+  console.log('Comment edited')
 })
 
 app.post('/deleteComment', function (req, res) {

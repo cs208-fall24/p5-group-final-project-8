@@ -14,10 +14,14 @@ body
                 input.addButton(type = 'submit' value = 'Add')
         ul
         - for (let comment of comments)
-            li= comment.comment + " - " + comment.date + " min(s) ago"
+            li= comment.comment + " - " + comment.date + "min"
             form(action="/deleteComment", method="POST")
                 input(type="hidden", name="id" value=comment.id)
                 input.deleteButton(type="submit", value="Delete")
+            form(action="/editComment", method="POST")
+                input(type="hidden", name="id" value=comment.id)
+                input.editBox(type = 'text' name = 'edit')
+                input.editButton(type="submit", value="Edit")
     section 
         a(href='/student1') Back to Department of Europa's Studies
         
