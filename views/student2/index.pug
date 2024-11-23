@@ -1,7 +1,33 @@
 doctype html
-link(rel='stylesheet' href='css/student2.css')
-
-head
-    title Under Water Basket weaver (Masters) - student 2
-body
-    h1 You will learn how to weave baskets underwater
+html
+  head
+    title Underwater Welding - Student 2
+    link(rel="stylesheet" href="/css/student2.css")
+  body
+    h1 Joshua Wilson
+    h2 Underwater Welding
+    section
+      h2 Location
+      p The Department of Underwater Welding is located at 500 Deep Sea Ave, Atlantis University, Atlantic Ocean.
+    section
+      h2 About
+        section
+          h3 Career Opportunities
+          p Underwater welding offers exciting opportunities in ship repair, offshore oil rigs, and underwater construction.
+        section
+          h3 Training & Safety
+          p Students undergo rigorous training to ensure safety while performing underwater welding operations.
+        section
+          h3 Advanced Equipment
+          p The department is equipped with state-of-the-art diving and welding gear to provide hands-on experience.
+    section
+      h2 Things To Do
+      ul
+        li Participate in underwater welding competitions.
+        li Explore shipwrecks and underwater structures.
+        li Work on real-world offshore projects.
+    section
+  h2 Add a Comment
+  form(action="/student2/add-comment" method="POST")
+    input(type="text" name="comment" placeholder="Enter your comment")
+    button(type="submit") Add Comment
