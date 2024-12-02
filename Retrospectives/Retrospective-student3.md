@@ -24,7 +24,7 @@ All and all, it was fun, but I know now, that I will never work in the web devel
 
 
 ## Known issues or Bugs
-    None. 😄👍🏾
+    None 😄👍🏾
     
 ## Sources used
 -[HTML and CSS Introduction](https://shanepanter.com/cs208/html-css-introduction)
