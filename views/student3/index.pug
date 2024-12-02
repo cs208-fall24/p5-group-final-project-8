@@ -1,8 +1,33 @@
 doctype html
-link(rel='stylesheet' href='css/student3.css')
-
-head
-    title Mayonnaise expert (PHD) - student 3
-body
-    h1 You will learn how to study Mayonnaise
-    p A complete degree in Mayonnaise research and development
+html
+  head
+    title Underwater Welding - Student 2
+    link(rel="stylesheet" href="/css/student2.css")
+  body
+    h1 Adam Jalyo
+    h2 Electrical Engineering
+    section
+      h2 Location
+      p Department of Electrical Engineering located at 1375 University Drive
+    section
+      h2 About
+        section
+          h3 Career Opportunities
+          p As technologies continue to develop, the need for electrical engineers should also continue to increase. Those who pursue education in the field can work in a career where they design and maintain systems that support different electronics and electrical tools. As an electrical engineer, you have a lot of career paths available to you and may be able to find work in a variety of industries.
+        section
+          h3 Training & Safety
+          p Students undergo rigorous training to ensure safety while performing underwater welding operations.
+        section
+          h3 Advanced Equipment
+          p The department is equipped with state-of-the-art diving and welding gear to provide hands-on experience.
+    section
+      h2 Things To Do
+      ul
+        li Participate in underwater welding competitions.
+        li Explore shipwrecks and underwater structures.
+        li Work on real-world offshore projects.
+    section
+  h2 Add a Comment
+  form(action="/student3/add-comment" method="POST")
+    input(type="text" name="comment" placeholder="Enter your comment")
+    button(type="submit") Add Comment
