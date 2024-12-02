@@ -1,4 +1,3 @@
-
 document.getElementById('commentForm').addEventListener('submit', function(e) {
   e.preventDefault()
   const comment = e.target.comment.value
