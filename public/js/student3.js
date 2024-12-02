@@ -1,83 +1,43 @@
-document.getElementById('commentForm').addEventListener('submit', function(e) {
-  e.preventDefault()
-  const comment = e.target.comment.value
+/**
+ * 
+ * @author Adam Jalyo
+ * @version 3.0, Last Edited on [12/02/2024]
+ * 
+ * This following script function is to enhances the functionality of a textarea element with the following features:
+ * 1. Removes placeholder text and changes the border color when the textarea is focused.
+ * 2. Restores the placeholder text and resets the border color when the textarea loses focus.
+ * 3. Displays a button when the textarea is focused and hides it when the clear button is clicked.
+ * 
+ */
 
-  fetch('/api/comments', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ comment })
-  })
-    .then(response => response.json())
-    .then(data => {
-      loadComments()
-      e.target.comment.value = ''
-    })
-    .catch(error => console.error('Error:', error))
-})
+// Select the textarea element from the document.
+var feild = document.querySelector('textarea');
 
-function loadComments() {
-  fetch('/api/comments')
-    .then(response => response.json())
-    .then(data => {
-      const commentsList = document.getElementById('comments-list')
-      commentsList.innerHTML = ''
-      if (data.length === 0) {
-        commentsList.innerHTML = '<li>No comments yet</li>'
-      } else {
-        data.forEach(comment => {
-          const listItem = document.createElement('li')
-          listItem.textContent = comment.text
+// Store the current value of the "placeholder" attribute from the textarea.
+var backUp = feild.getAttribute('placeholder');
 
-          const deleteButton = document.createElement('button')
-          deleteButton.textContent = 'Delete'
-          deleteButton.addEventListener('click', function() {
-            deleteComment(comment.id)
-          })
+// Select the element with the class "btn".
+var btn = document.querySelector('.btn');
 
-          const editButton = document.createElement('button')
-          editButton.textContent = 'Edit'
-          editButton.addEventListener('click', function() {
-            const newComment = prompt('Edit your comment:', comment.text)
-            if (newComment) {
-              editComment(comment.id, newComment)
-            }
-          })
+// Select the element with the ID "clear".
+var clear = document.getElementById('clear')
 
-          listItem.appendChild(editButton)
-          listItem.appendChild(deleteButton)
-          commentsList.appendChild(listItem)
-        })
-      }
-    })
-    .catch(error => console.error('Error:', error))
+// Event handler for when the textarea gains focus (user clicks into it).
+feild.onfocus = function(){
+    // Remove the placeholder text by setting it to an empty string.
+    this.setAttribute('placeholder', '');
+    // Change the border color of the textarea to a darker color.
+    this.style.borderColor = '#333';
+    // Make the button with the class "btn" visible.
+    btn.style.display = 'block'
 }
 
-function deleteComment(commentId) {
-  fetch(`/api/comments/${commentId}`, {
-    method: 'DELETE'
-  })
-    .then(response => response.json())
-    .then(data => {
-      loadComments()
-    })
-    .catch(error => console.error('Error:', error))
+feild.onblur = function(){
+    this.setAttribute('placeholder',backUp);
+    this.style.borderColor = '#aaa'
 }
 
-function editComment(commentId, newComment) {
-  fetch(`/api/comments/${commentId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ text: newComment })
-  })
-    .then(response => response.json())
-    .then(data => {
-      loadComments()
-    })
-    .catch(error => console.error('Error:', error))
+clear.onclick = function(){
+    btn.style.display = 'none';
+    feild.value = '';
 }
-
-loadComments() // Call this on page load
