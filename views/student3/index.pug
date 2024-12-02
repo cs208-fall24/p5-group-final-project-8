@@ -1,33 +1,44 @@
 doctype html
 html
   head
-    title Underwater Welding - Student 2
-    link(rel="stylesheet" href="/css/student2.css")
+    title Party - student1
+    link(rel='stylesheet' href='/css/student3.css')
   body
     h1 Adam Jalyo
-    h2 Electrical Engineering
+    h2.title Party  
+
+    section 
+      h2 location 
+      p 
+      | This major takes place in the beautiful state of Iowa, there are many corn fields
+      | to run through and party in! We chose the state of Iowa because we felt it encompasses the ideology of partying.
+      
+    section 
+      h2 About 
+      section
+        h3 Introduction To Partying 
+        p Partying isn't a major just anyone could enroll in. It takes a special kind of person who can put in many hours of hard work and dedication. This might seem daunting but it is well worth the time spent. 
+      section 
+        h3 Travel Opportunities 
+        p There are many opportunities for students pursuing a party degree to visit other campuses and party with different students. This allows students to experience different customs and traditions.
+      section
+        h3 Meet New People
+        p One of the major draws of this major is the opportunities to meet new people. This is a social major where you will need to interact with many different people, forming new connections and bonds. 
+
     section
-      h2 Location
-      p Department of Electrical Engineering located at 1375 University Drive
+      h2 Things To Do 
+      ul 
+        li Go to the local cornfield 
+        li Join a local frat house
+        li Meet lots of new people
+
     section
-      h2 About
-        section
-          h3 Career Opportunities
-          p As technologies continue to develop, the need for electrical engineers should also continue to increase. Those who pursue education in the field can work in a career where they design and maintain systems that support different electronics and electrical tools. As an electrical engineer, you have a lot of career paths available to you and may be able to find work in a variety of industries.
-        section
-          h3 Training & Safety
-          p Students undergo rigorous training to ensure safety while performing underwater welding operations.
-        section
-          h3 Advanced Equipment
-          p The department is equipped with state-of-the-art diving and welding gear to provide hands-on experience.
+      h2 Gallery 
+      img(src="img/cornfield-party.jpg", alt="A college party taking place in a cornfield")
+      img(src="img/college-party.png", alt="College students at a party")
+
     section
-      h2 Things To Do
-      ul
-        li Participate in underwater welding competitions.
-        li Explore shipwrecks and underwater structures.
-        li Work on real-world offshore projects.
-    section
-  h2 Add a Comment
-  form(action="/student3/add-comment" method="POST")
-    input(type="text" name="comment" placeholder="Enter your comment")
-    button(type="submit") Add Comment
+      h2 
+      a(href='/comments') Student Comments
+      ul#comments-list
+
