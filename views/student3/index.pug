@@ -1,8 +1,67 @@
 doctype html
-link(rel='stylesheet' href='css/student3.css')
+html
+  head
+    title Anime Major - student3
+    link(rel='stylesheet' href='/css/student3.css')
 
-head
-    title Mayonnaise expert (PHD) - student 3
-body
-    h1 You will learn how to study Mayonnaise
-    p A complete degree in Mayonnaise research and development
+    //- The following code is to pull from the Google Fonts API, to use the font Fira Code.
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  
+  //- The website body, which has 4 sections Location, About, Things To Do, and Gallery at the end.
+  body
+    h1 Adam Jalyo
+    h2.title Anime Major 
+
+    //- First Section
+    section 
+      h2 - Location 
+      p 
+      | This major takes place in the beautiful country of Japan, where there is anything you can dream of, when it is Anime and Manga related.
+      | We picked Japan, because it is the core of Anime, and as we are sure you as a student we would love to be there, so why not be there while studying your Anime science? We know you will love it, because we do as well!
+    
+    //- Second Section  
+    section 
+      h2 - About
+       
+      //- Sub Section 1
+      section
+        h3 Introduction To Anime Major
+        p Anime isn't a major just anyone could enroll in, you need to be super into Anime, and knows what the Anime Clymore is for example, and have put many many many hours and time into watching anime, and understand why watching Anime in dubs is a big sin, for you to have a chance to enroll and be a part of our major, as it is quite competitive. You need many hours of hard work of setting in front of your laptop or phone, and watch Anime for hours! And this might seem daunting at first, but it is worth it, trust us! 
+
+      //- Sub Section 2
+      section 
+        h3 Travel Opportunities to USA for ComicCon 
+        p There are many opportunities for students pursuing Anime degree to visit USA during the time of ComicCon in California Where you get to meet like minded people as well! and learn more about their anime tradition.
+
+      //- Sub Section 3
+      section
+        h3 Meet Like Minded People
+        p One of the major big factors, is the fact that you will meet people whom are like you in mind and soul and spirit, in terms of loving Anime, so who knows, you might be able to meet your partner in Anime and in life as well, here at our department and major, and you get to create connections and bonds as well! 
+
+    //- Third Section
+    section
+      h2 - Things To Do @ College of Anime
+      ul 
+        li Watch Anime with Professors
+        li Watch Anime with Friends 
+        li Talk about Anime with Friends and Professors
+
+    //- Forth Section
+    section
+      h2 - Gallery 
+      img(src="img/Anime-Major.webp", alt="Anime College townhall during our annual festival")
+      img(src="img/Anime-Major-Student.webp", alt="Anime College students undergrad")
+
+    //- Comments Section
+  <div class="container">
+    <h2>Leave Us a Comment</h2>
+    <form>
+    <textarea placeholder='Type, your comment here please...'></textarea>
+    <div class="btn">
+      <input type="submit" value='Submit'>
+      <button id='clear' href='#'>Cancel</button>
+    </div>
+  </form>
+</div>
